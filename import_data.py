@@ -9,7 +9,7 @@ mydb = client['License_Plate_Manager']
 
 information = mydb.table0
 
-path = 'runs/detect/exp/crops/bienso/GeeksForGeeks.jpg'
+path = 'runs/detect/exp/crops/bienso/getBike.jpg'
 UpStrg, DownStrg = getStr(path)
 
 sec = time.time()

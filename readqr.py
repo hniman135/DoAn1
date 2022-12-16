@@ -14,7 +14,7 @@ while camera == True:
 
 id = bson.objectid.ObjectId(qr_dectect)
 
-path = 'runs/detect/exp/crops/bienso/bienso.jpg'
+path = 'runs/detect/exp/crops/bienso/popBike.jpg'
 UpStrg, DownStrg = getStr(path)
 print(UpStrg, DownStrg)
 

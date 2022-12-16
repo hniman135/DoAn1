@@ -13,7 +13,7 @@ if result:
     #cv2.imshow("bienso", image)
   
     # saving image in local storage
-    cv2.imwrite("bienso.png", image)
+    cv2.imwrite("popBike.png", image)
   
     # If keyboard interrupt occurs, destroy image 
     # window
