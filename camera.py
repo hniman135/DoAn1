@@ -18,7 +18,7 @@ if result:
   
     # showing result, it take frame name and image 
     # output
-    cv2.imshow("GeeksForGeeks", image)
+    #cv2.imshow("GeeksForGeeks", image)
   
     # saving image in local storage
     cv2.imwrite("GeeksForGeeks.png", image)
@@ -27,7 +27,7 @@ if result:
     # window
     cv2.waitKey(0)
     cam.release()
-    cv2.destroyWindow("GeeksForGeeks")
+    #cv2.destroyWindow("GeeksForGeeks")
   
 # If captured image is corrupted, moving to else part
 else:
