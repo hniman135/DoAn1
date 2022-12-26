@@ -7,9 +7,7 @@ import sys
 import shutil
 #delete folder
     #@check if the dicrectory exist, deleted it
-remove_path = "C:/Users/manax/Source/EasyOCR/Resized_Folder"
-if os.path.exists(remove_path):
-    shutil.rmtree(remove_path)
+
 
 
 #resize image folder
