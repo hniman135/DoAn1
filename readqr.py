@@ -37,6 +37,8 @@ for res in result:
         acp = 0
 print(acp)
 
+if (acp == 1): db.table0.delete_one({'_id' : id})
+
 
 
 
