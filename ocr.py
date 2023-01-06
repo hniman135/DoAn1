@@ -43,8 +43,31 @@ def main():
 
 def getStr(data):  
     reader = easyocr.Reader(['en'])
-    ocr_results = reader.readtext(data, allowlist = '0123456789ABCDEFGHIKLMNOPQRSTUVWXYZ')
-    return ocr_results[0][1], ocr_results[1][1]
+    ocr_results = reader.readtext(data, allowlist = '0123456789ABCDEFGHKIJKLMNOPQRSTUVXYZ.-')
+    li1 = ocr_results[0][1]
+    up=[i for i in li1]
+    li2 = ocr_results[1][1]
+    down=[i for i in li2]
+    str1=''
+    str2=''
+    for i in range(len(up)):
+        try:
+            up[i] = up[i].replace('.', '')
+            up[i] = up[i].replace('-', '')
+        except:
+            continue
+    for ele in up:
+        str1 += ele
+    for i in range(len(down)):
+        print(down[3])
+        try:
+            down[i] = down[i].replace('.', '')
+            down[i] = down[i].replace('-', '')
+        except:
+            continue
+    for ele in down:
+        str2 += ele
+    return str1, str2
 
 
 if __name__ == "__main__":

@@ -3,25 +3,29 @@ import cv2
 import pyqrcode
 from ocr import getStr
 
-#path = 'pic_ocr/pic1.jpg'
 cam = cv2.VideoCapture(0)
-result, image = cam.read()
-if result:
-  
-    # showing result, it take frame name and image 
-    # output
-    #cv2.imshow("bienso", image)
-  
-    # saving image in local storage
-    cv2.imwrite("popBike.png", image)
-  
-    # If keyboard interrupt occurs, destroy image 
-    # window
-    cv2.waitKey(0)
-    cam.release()
-    #cv2.destroyWindow("bienso")
+cam.set(3,640)
+cam.set(4,480)
 
-else:
-    print("No image detected. Please! try again")
+while True:
+    ret, frame = cam.read()
+    if not ret:
+        break
+    cv2.imshow("popBike", frame)
+    k = cv2.waitKey(1)
+    #if k%256 == 27:
+        # ESC pressed
+        #break
+    if k%256 == 32:
+        # SPACE pressed
+        img_name = "Bike.png"
+        cv2.imwrite(img_name, frame)
+        #cv2.imshow("pic", frame);
+        break
+        #print("{} written!".format(img_name))
+        #print("cho xe vao")
+        #img_counter += 1
+cam.release()
+cv2.destroyAllWindows()
 
 

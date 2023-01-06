@@ -1,32 +1,20 @@
-# program to capture single image from webcam in python
-  
-# importing OpenCV library
 import cv2
-
-# initialize the camera
-# If you have multiple camera connected with 
-# current device, assign a value in cam_port 
-# variable according to that
+#set window size (640 x 480)
 cam = cv2.VideoCapture(0)
-  
-# reading the input using the camera
-result, image = cam.read()
-  
-# If image will detected without any error, 
-# show result
-if result:
-  
-    # showing result, it take frame name and image 
-    # output
-  
-    # saving image in local storage
-    cv2.imwrite("getBike.png", image)
-  
-    cam.release()
-  
-# If captured image is corrupted, moving to else part
-else:
-    print("No image detected. Please! try again")
-
-
-
+cam.set(3,640)
+cam.set(4,480)
+# display the camera
+# press SPACE to take a shot
+while True:
+    ret, frame = cam.read()
+    if not ret:
+        break
+    cv2.imshow("getBike", frame)
+    k = cv2.waitKey(1)
+    if k%256 == 32:
+        # SPACE pressed
+        img_name = "Bike.png"
+        cv2.imwrite(img_name, frame)
+        break
+cam.release()
+cv2.destroyAllWindows()
